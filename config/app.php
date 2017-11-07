@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        alpha-api\Providers\AppServiceProvider::class,
-        alpha-api\Providers\AuthServiceProvider::class,
-        // alpha-api\Providers\BroadcastServiceProvider::class,
-        alpha-api\Providers\EventServiceProvider::class,
-        alpha-api\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
         Folklore\GraphQL\ServiceProvider::class,
         Graphiql\GraphiqlServiceProvider::class,
 

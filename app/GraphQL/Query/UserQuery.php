@@ -1,8 +1,8 @@
 <?php
-namespace alpha-api\GraphQL\Query;
+namespace App\GraphQL\Query;
 
 use GraphQL;
-use alpha-api\User;
+use App\User;
 use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Query;
 
