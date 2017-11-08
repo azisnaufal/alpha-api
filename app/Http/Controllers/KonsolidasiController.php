@@ -131,13 +131,32 @@ class KonsolidasiController extends Controller
    
      public function data_kelurahan(Request $request)
     {
-      $data = DB::select('SELECT nama_kelurahan, jumlah_rw, jumlah_rt, kodepos, jumlah_penduduk, jumlah_pria, jumlah_wanita, luas_wilayah, kepadatan FROM tbl_gabungan WHERE id_kelurahan = id_kelurahan AND id_kecamatan = id_kecamatan');
-      $res['success'] = 200;
-      $res['result'] = $data;
-      return response($res);
+      if($request->query('id_kelurahan')!=null && $request->query('id_kecamatan')){
+        //get as string
+        $id_kelurahan = $request->query('id_kelurahan');
+        $id_kecamatan = $request->query('id_kecamatan');
+        //do query
+        $data = DB::select("SELECT nama_kecamatan, id_kelurahan, nama_kelurahan, kodepos, jumlah_rw, jumlah_rt, kode_kemendagri, jumlah_penduduk, luas_wilayah FROM tbl_gabungan WHERE id_kelurahan = '$id_kelurahan' AND id_kecamatan = '$id_kecamatan'");
+        $res['success'] = 200;
+        $res['result'] = $data;
+        //return data
+        return response($res);
+        
+      }
+      else{
+        $data = DB::select('SELECT nama_kelurahan, jumlah_rw, jumlah_rt, kodepos, jumlah_penduduk, jumlah_pria, jumlah_wanita, luas_wilayah, kepadatan FROM tbl_gabungan WHERE id_kelurahan = id_kelurahan AND id_kecamatan = id_kecamatan');
+        $res['success'] = 200;
+        $res['result'] = $data;
+        return response($res);
+      }
+      
     }
 
-
+    //no_11
+    public function data_id_kelurahan(Request $request, $id_kelurahan, $id_kecamatan)
+    {
+      
+    }
    
 
 
