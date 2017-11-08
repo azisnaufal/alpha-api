@@ -16,6 +16,14 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
+Route::get('/ex', function (Request $request) {
+    return $request->segment(1);
+});
 Route::get('/konsolidasi', 'KonsolidasiController@index');
+
 Route::get('/konsolidasi/jumlah/penduduk_perkelurahan', 'KonsolidasiController@jumlah_penduduk_perkelurahan');
+Route::get('/konsolidasi/jumlah/penduduk_perkecamatan', 'KonsolidasiController@jumlah_penduduk_perkecamatan');
+Route::get('/konsolidasi/wilayah/keterangan', 'KonsolidasiController@no_3');
+Route::get('/konsolidasi/wilayah/luas/kecamatan', 'KonsolidasiController@luas_wilayah_perkecamatan');
+Route::get('/konsolidasi/wilayah/', 'KonsolidasiController@wilayah');
+Route::get('/konsolidasi/kelurahan/', 'KonsolidasiController@kelurahan');

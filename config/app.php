@@ -178,6 +178,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         Folklore\GraphQL\ServiceProvider::class,
         Graphiql\GraphiqlServiceProvider::class,
+        // other providers...
+        // Optimus\Heimdal\Provider\LaravelServiceProvider::class,
 
 
     ],
