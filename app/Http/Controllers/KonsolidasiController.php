@@ -105,6 +105,7 @@ class KonsolidasiController extends Controller
 
     public function data_keagamaan_perkelurahan(Request $request)
     {
+    
 
       if($request->query('id_kelurahan')!=null && $request->query('id_kecamatan')){
         //get as string

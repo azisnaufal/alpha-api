@@ -27,6 +27,7 @@ Route::get('/konsolidasi/wilayah/keterangan', 'KonsolidasiController@no_3');
 Route::get('/konsolidasi/wilayah/luas/kecamatan', 'KonsolidasiController@luas_wilayah_perkecamatan');
 Route::get('/konsolidasi/wilayah/', 'KonsolidasiController@wilayah');
 Route::get('/konsolidasi/kelurahan/', 'KonsolidasiController@kelurahan');
+Route::get('/konsolidasi/kecamatan/', 'KonsolidasiController@kecamatan');
 Route::get('/konsolidasi/jumlah/penduduk_perkelurahan', 'KonsolidasiController@jumlah_penduduk_perkelurahan');
 Route::get('/konsolidasi/jumlah/kelurahan_perkecamatan','KonsolidasiController@jumlah_kelurahan_perkecamatan');
 Route::get('/konsolidasi/data/penduduk/kelurahan/','KonsolidasiController@data_kependudukan_perkelurahan');
