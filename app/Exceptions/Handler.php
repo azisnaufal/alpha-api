@@ -47,7 +47,43 @@ class Handler extends ExceptionHandler
      * @return \Illuminate\Http\Response
      */
     public function render($request, Exception $exception)
-    {
+    {    
+        if($request->is('api/*')) {
+            $handler = new \Optimus\Heimdal\ExceptionHandler($this->container);
+            return $handler->render($request, $exception);
+        }
+
+
+        // If the request wants JSON (AJAX doesn't always want JSON)
+        // if ($request->is('api/*')) {
+        //     // Define the response
+        //     $response = [
+        //         'errors' => 'Sorry, something went wrong.'
+        //     ];
+
+        //     // If the app is in debug mode
+        //     if (config('app.debug')) {
+        //         // Add the exception class name, message and stack trace to response
+        //         $response['status'] = $exception->getStatusCode();
+        //         $response['exception'] = get_class($exception); // Reflection might be better here
+        //         $response['message'] = $exception->getMessage();
+        //         $response['trace'] = $exception->getTrace();
+                
+        //     }
+
+        //     // Default response of 400
+        //     $status = 400;
+
+        //     // If this exception is an instance of HttpException
+        //     if ($this->isHttpException($exception)) {
+        //         // Grab the HTTP status code from the Exception
+        //         $status = $exception->getStatusCode();
+        //     }
+
+        //     // Return a JSON response with the response array and status code
+        //     return response()->json($response, $status);
+        // }
+
         return parent::render($request, $exception);
     }
 }

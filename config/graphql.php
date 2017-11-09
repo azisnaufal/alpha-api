@@ -118,7 +118,8 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-                'users' => App\GraphQL\Query\UserQuery::class
+                'users' => App\GraphQL\Query\UserQuery::class,
+                'konsolidasi' => App\GraphQL\Query\KonsolidasiQuery::class
             ],
             'mutation' => [
 
@@ -144,6 +145,7 @@ return [
      */
     'types' => [
         'User' => App\GraphQL\Type\UserType::class,
+        'Konsolidasi' => App\GraphQL\Type\KonsolidasiType::class,
     ],
 
     /*
