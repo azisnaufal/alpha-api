@@ -38,6 +38,14 @@ class KonsolidasiType extends GraphQLType {
                 'type' => Type::string(),
                 'description' => 'Nama dari suatu kecamatan'
             ],
+            'id_kelurahan' => [
+                'type' => Type::string(),
+                'description' => 'ID dari suatu kelurahan'
+            ],
+            'nama_kelurahan' => [
+                'type' => Type::string(),
+                'description' => 'Nama dari suatu kelurahan'
+            ],
             'kodepos' => [
                 'type' => Type::int(),
                 'description' => 'Kodepos dari suatu ...'

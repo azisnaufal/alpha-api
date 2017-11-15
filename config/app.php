@@ -179,7 +179,7 @@ return [
         Folklore\GraphQL\ServiceProvider::class,
         Graphiql\GraphiqlServiceProvider::class,
         // other providers...
-        Optimus\Heimdal\Provider\LaravelServiceProvider::class,
+        // Optimus\Heimdal\Provider\LaravelServiceProvider::class,
 
 
     ],

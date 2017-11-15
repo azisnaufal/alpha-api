@@ -36,6 +36,14 @@ class KonsolidasiQuery extends Query {
                 'type' => Type::string(),
                 'name' => 'nama_kecamatan'
             ],
+            'id_kelurahan' => [
+                'type' => Type::string(),
+                'name' => 'id_kelurahan'
+            ],
+            'nama_kelurahan' => [
+                'type' => Type::string(),
+                'name' => 'nama_kelurahan'
+            ],
             'kodepos' => [
                 'type' => Type::int(),
                 'name' => 'kodepos'
