@@ -36,9 +36,16 @@ Route::get('/konsolidasi/jumlah/tenaga/pengajar/wilayah','KonsolidasiController@
 Route::get('/konsolidasi/wilayah/keterangan', 'KonsolidasiController@no_3');
 Route::get('/konsolidasi/wilayah/luas/kecamatan', 'KonsolidasiController@luas_wilayah_perkecamatan');
 Route::get('/konsolidasi/wilayah/', 'KonsolidasiController@wilayah');
+<<<<<<< HEAD
 
 Route::get('/konsolidasi/data/kelurahan/', 'KonsolidasiController@kelurahan');
 
+=======
+Route::get('/konsolidasi/kelurahan/', 'KonsolidasiController@kelurahan');
+Route::get('/konsolidasi/kecamatan/', 'KonsolidasiController@kecamatan');
+Route::get('/konsolidasi/jumlah/penduduk_perkelurahan', 'KonsolidasiController@jumlah_penduduk_perkelurahan');
+Route::get('/konsolidasi/jumlah/kelurahan_perkecamatan','KonsolidasiController@jumlah_kelurahan_perkecamatan');
+>>>>>>> 414e0a126aac6bdfb3eceb5b39a4484ee0c06c23
 Route::get('/konsolidasi/data/penduduk/kelurahan/','KonsolidasiController@data_kependudukan_perkelurahan');
 Route::get('/konsolidasi/data/wilayah','KonsolidasiController@data_wilayah');
 Route::get('/konsolidasi/data/kelurahan/kecamatan/','KonsolidasiController@data_kelurahan_perkecamatan');
