@@ -294,4 +294,32 @@ class KonsolidasiController extends Controller
       $res['result'] = $data;
       return response($res);
     }
+    
+    public function jumlah_wajib_ktp_tiap_kecamatan(\Symfony\Component\HttpFoundation\Request $request){
+      $data = DB::select('SELECT id_kecamatan, nama_kecamatan, SUM(wajib_ktp) AS wajib_ktp FROM tbl_gabungan GROUP BY id_kecamatan;');
+      $res['success'] = 200;
+      $res['result'] = $data;
+      return response($res);
+    }
+    
+    public function jumlah_rt_tiap_kelurahan(\Symfony\Component\HttpFoundation\Request $request){
+      $data = DB::select('SELECT id_kelurahan, nama_kelurahan, jumlah_rt FROM tbl_gabungan;');
+      $res['success'] = 200;
+      $res['result'] = $data;
+      return response($res);
+    }
+    
+    public function jumlah_lp(\Symfony\Component\HttpFoundation\Request $request){
+      $data = DB::select('SELECT SUM(jumlah_pria) AS jumlah_pria, SUM(jumlah_wanita) AS jumlah_wanita FROM tbl_gabungan;');
+      $res['success'] = 200;
+      $res['result'] = $data;
+      return response($res);
+    }
+    
+    public function jumlah_pns_perkecamatan(\Symfony\Component\HttpFoundation\Request $request){
+      $data = DB::select('SELECT id_kecamatan, nama_kecamatan, SUM(pns) AS pns FROM tbl_gabungan GROUP BY id_kecamatan;');
+      $res['success'] = 200;
+      $res['result'] = $data;
+      return response($res);
+    }
 }
