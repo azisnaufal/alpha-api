@@ -253,7 +253,21 @@ class KonsolidasiController extends Controller
       
     }
     public function data_penduduk_berdasarakan_golongan_darah_perkecamatan(\Symfony\Component\HttpFoundation\Request $request){
-      $data = DB::select('SELECT id_kecamatan, nama_kecamatan, SUM(goldar_a) AS goldar_a, SUM(goldar_a_min) AS goldar_a_min, SUM(goldar_a_plus) AS goldar_a_plus, SUM(goldar_ab) AS goldar_ab, SUM(goldar_b_min)AS goldar_b_min, SUM(goldar_ab_plus) AS goldar_ab_plus, SUM(goldar_b) AS goldar_b, SUM(goldar_b_min) AS goldar_b_min, SUM(goldar_b_plus)AS goldar_b_plus, SUM(goldar_o) AS goldar_o, SUM(goldar_o_min) AS goldar_o_min, SUM(goldar_o_plus) AS goldar_o_plus, SUM(goldar_tidak_diketahui) AS goldar_tidak_diketahui FROM tbl_gabungan GROUP BY id_kecamatan;');
+      $data = DB::select('SELECT id_kecamatan, nama_kecamatan, SUM(goldar_a) AS goldar_a, SUM(goldar_a_min) AS goldar_a_min, SUM(goldar_a_plus) AS goldar_a_plus, SUM(goldar_ab) AS goldar_ab, SUM(goldar_b_min)AS goldar_b_min, SUM(goldar_ab_plus) AS goldar_ab_plus, SUM(goldar_b) AS goldar_b, SUM(goldar_b_min) AS goldar_b_min, SUM(goldar_b_plus)AS goldar_b_plus, SUM(goldar_o) AS goldar_o, SUM(goldar_o_min) AS goldar_o_min, SUM(goldar_o_plus) AS goldar_o_plus, SUM(goldar_tidak_diketahui) AS goldar_tidak_diketahui  
+      ,`goldar_a`
+      + `goldar_a_min`
+      + `goldar_a_plus`
+      + `goldar_ab`
+      + `goldar_ab_min`
+      + `goldar_ab_plus`
+      + `goldar_b`
+      + `goldar_b_min`
+      + `goldar_b_min`
+      + `goldar_b_plus`
+      + `goldar_o`
+      + `goldar_o_min`
+      + `goldar_o_plus` AS jumlah_penduduk
+  FROM tbl_gabungan GROUP BY id_kecamatan;');
       $res['success'] = 200;
       $res['result'] = $data;
       return response($res);
@@ -265,22 +279,46 @@ class KonsolidasiController extends Controller
       return response($res);
     }
     public function data_usia_pendidikan_kecamatan(\Symfony\Component\HttpFoundation\Request $request){
-      $data = DB::select('SELECT id_kecamatan, nama_kecamatan, SUM(usia_pendidikan_12_14) AS usia_pendidikan_12_14, SUM(usia_pendidikan_15_17) AS usia_pendidikan_15_17, SUM(usia_pendidikan_18_22) AS usia_pendidikan_18_22, SUM(usia_pendidikan_3_4) AS usia_pendidikan_3_4, SUM(usia_pendidikan_5) AS usia_pendidikan_5, SUM(usia_pendidikan_6_11) AS usia_pendidikan_6_11 FROM tbl_gabungan GROUP BY id_kecamatan;');
-      $res['success'] = 200;
-      $res['result'] = $data;
-      return response($res);
+      if($request->query('id_kecamatan')!=null ){
+        $data = DB::select("SELECT id_kecamatan, nama_kecamatan, SUM(usia_pendidikan_12_14) AS usia_pendidikan_12_14, SUM(usia_pendidikan_15_17) AS usia_pendidikan_15_17, SUM(usia_pendidikan_18_22) AS usia_pendidikan_18_22, SUM(usia_pendidikan_3_4) AS usia_pendidikan_3_4, SUM(usia_pendidikan_5) AS usia_pendidikan_5, SUM(usia_pendidikan_6_11) AS usia_pendidikan_6_11 FROM tbl_gabungan GROUP BY id_kecamatan WHERE id_kecamatan '$id_kecamatan';");
+        $res['success'] = 200;
+        $res['result'] = $data;
+        return response($res);
+      }
+      else{
+        $data = DB::select('SELECT id_kecamatan, nama_kecamatan, SUM(usia_pendidikan_12_14) AS usia_pendidikan_12_14, SUM(usia_pendidikan_15_17) AS usia_pendidikan_15_17, SUM(usia_pendidikan_18_22) AS usia_pendidikan_18_22, SUM(usia_pendidikan_3_4) AS usia_pendidikan_3_4, SUM(usia_pendidikan_5) AS usia_pendidikan_5, SUM(usia_pendidikan_6_11) AS usia_pendidikan_6_11 FROM tbl_gabungan GROUP BY id_kecamatan;');
+        $res['success'] = 200;
+        $res['result'] = $data;
+        return response($res);
+      }
     }
     public function jumlah_pensiunan_di_kecamatan_tertentu(Request $request){
-      $data = DB::select('SELECT id_kecamatan, nama_kecamatan, SUM(pensiunan) AS pensiunan FROM tbl_gabungan GROUP BY id_kecamatan;');
-      $res['success'] = 200;
-      $res['result'] = $data;
-      return response($res);
+      if($request->query('id_kecamatan')!=null ){
+        $data = DB::select("SELECT id_kecamatan, nama_kecamatan, SUM(pensiunan) AS pensiunan FROM tbl_gabungan GROUP BY id_kecamatan WHERE id_kecamatan = '$id_kecamatan';");
+        $res['success'] = 200;
+        $res['result'] = $data;
+        return response($res);
+      }
+      else{
+        $data = DB::select('SELECT id_kecamatan, nama_kecamatan, SUM(pensiunan) AS pensiunan FROM tbl_gabungan GROUP BY id_kecamatan;');
+        $res['success'] = 200;
+        $res['result'] = $data;
+        return response($res);
+      }
     }
     public function jumlah_yang_tidak_bekerja_di_suatu_kecamatan(\Symfony\Component\HttpFoundation\Request $request){
-      $data = DB::select('SELECT id_kecamatan , nama_kecamatan, SUM(belum_tidak_bekerja) AS belum_tidak_bekerja FROM tbl_gabungan GROUP BY id_kecamatan;');
-      $res['success'] = 200;
-      $res['result'] = $data;
-      return response($res);
+      if($request->query('id_kecamatan')!=null ){
+        $data = DB::select("SELECT id_kecamatan , nama_kecamatan, SUM(belum_tidak_bekerja) AS belum_tidak_bekerja FROM tbl_gabungan GROUP BY id_kecamatan WHERE id_kecamatan = '$id_kecamatan';");
+        $res['success'] = 200;
+        $res['result'] = $data;
+        return response($res);
+      }
+      else{
+        $data = DB::select('SELECT id_kecamatan , nama_kecamatan, SUM(belum_tidak_bekerja) AS belum_tidak_bekerja FROM tbl_gabungan GROUP BY id_kecamatan;');
+        $res['success'] = 200;
+        $res['result'] = $data;
+        return response($res);
+      }
     }
     public function jumlah_tenaga_kesehatan_tiap_wilayah(\Symfony\Component\HttpFoundation\Request $request){
       $data = DB::select('SELECT id_wilayah, nama_wilayah, SUM(tenaga_kesehatan) AS tenaga_kesehatan FROM tbl_gabungan GROUP BY id_kecamatan;');
