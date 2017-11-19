@@ -16,8 +16,15 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::group(['middleware'=>'auth'], function(){
+    Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/add', 'ApiController@index')->name('add');
+    Route::post('/add', 'ApiController@store');
+    Route::delete('/delete/{id}', 'ApiController@destroy');
+    Route::get('/edit/{id}', 'ApiController@edit');
+	Route::patch('/edit/{id}', 'ApiController@update');
+});
 
 Route::get('/key', function () {
     return str_random(64);

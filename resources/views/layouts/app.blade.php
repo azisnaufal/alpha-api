@@ -12,6 +12,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/glyphicons.css') }}" rel="stylesheet">
+    
 </head>
 <body>
     <div id="app">
@@ -47,11 +49,9 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+                                
 
-                                <ul class="dropdown-menu">
+                                
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -63,7 +63,7 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
-                                </ul>
+                                
                             </li>
                         @endguest
                     </ul>
