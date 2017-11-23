@@ -27,4 +27,10 @@ class HomeController extends Controller
         $data['result'] = \App\Api::all();
         return view('home')->with($data);
     }
+     public function nyobaan()
+    {
+        $data['result'] = \App\Api::all();
+        return view('nyobaan')->with($data);
+    }
+
 }
