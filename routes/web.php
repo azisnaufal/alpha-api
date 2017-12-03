@@ -14,11 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/nyobaan', 'HomeController@nyobaan')->name('nyobaan');
+
 
 Auth::routes();
 Route::group(['middleware'=>'auth'], function(){
     Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/nyobaan', 'HomeController@nyobaan')->name('nyobaan');
     Route::get('/add', 'ApiController@index')->name('add');
     Route::post('/add', 'ApiController@store');
     Route::delete('/delete/{id}', 'ApiController@destroy');

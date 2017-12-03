@@ -361,7 +361,7 @@ class KonsolidasiController extends Controller
       return response($res);
     }
     public function link(\Symfony\Component\HttpFoundation\Request $request, $link){
-      $sql = DB::select("SELECT sql_stat FROM tbl_api WHERE url = '$link'");
+      $sql = DB::select(DB::raw("SELECT sql_stat FROM tbl_api WHERE url = '$link'"));
       $data = DB::select($sql[0]->sql_stat);
       $res['success'] = 200;
       $res['result'] = $data;
