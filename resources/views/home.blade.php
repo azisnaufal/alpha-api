@@ -40,13 +40,25 @@
                     
 
                     <div class="table-responsive">
-                        <table class="table">
-                            <tr class="info ">
-                                <th class="col-md-3">URL</th>
-                                <th class="col-md-2">HTTP Verb</th>
-                                <th class="col-md-4">Judul</th>
-                                <th class="col-md-2">Aksi</th>
-                            </tr>
+                        <table class="table table-bordered"  id="tb_endpoints">
+                            <thead>
+                                <tr class="info ">
+                                    <th class="col-md-3">URL</th>
+                                    <th class="col-md-2">HTTP Verb</th>
+                                    <th class="col-md-4">Judul</th>
+                                    <th class="col-md-2">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr class="info ">
+                                    <th class="col-md-3">URL</th>
+                                    <th class="col-md-2">HTTP Verb</th>
+                                    <th class="col-md-4">Judul</th>
+                                    <th class="col-md-2">Aksi</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                            
                             @foreach ($result as $row)
                             <tr>
                                 <td>
@@ -75,6 +87,7 @@
                                 </td>
                             </tr>
                             @endforeach
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -82,4 +95,6 @@
         </div>
     </div>
 </div>
+
+
 @endsection
