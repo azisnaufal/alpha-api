@@ -16,7 +16,7 @@
     {{--  JS  --}}
     <script type="text/javascript" language="javascript" src="{{ asset('js/jquery-1.12.4.js') }}">
 	</script>
-	<script type="text/javascript" language="javascript" src="{{ aset('js/jquery.dataTables.min.js') }}">
+	<script type="text/javascript" language="javascript" src="{{ asset('js/jquery.dataTables.min.js') }}">
 	</script>
 	<script type="text/javascript" language="javascript" src="{{ asset('js/dataTables.bootstrap.min.js') }}">
 	</script>
