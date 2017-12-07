@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/nyobaan', 'HomeController@nyobaan')->name('nyobaan');
+Route::get('/homeku', 'HomeController@homeku')->name('homeasli');
 
 
 Auth::routes();
