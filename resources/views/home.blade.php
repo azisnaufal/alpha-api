@@ -40,11 +40,12 @@
                     
 
                     <div class="table-responsive">
-                        <table class="table table-bordered"  id="tb_endpoints">
+                        <table class="table table-bordered"  id="tb_endpoints" cellspasing="0">
                             <thead>
                                 <tr class="info ">
                                     <th class="col-md-3">URL</th>
-                                    <th class="col-md-2">HTTP Verb</th>
+                                    <th class="col-md-1">Kelompok</th>
+                                    <th class="col-md-1">HTTP Verb</th>
                                     <th class="col-md-4">Judul</th>
                                     <th class="col-md-2">Aksi</th>
                                 </tr>
@@ -52,7 +53,8 @@
                             <tfoot>
                                 <tr class="info ">
                                     <th class="col-md-3">URL</th>
-                                    <th class="col-md-2">HTTP Verb</th>
+                                    <th class="col-md-1">Kelompok</th>
+                                    <th class="col-md-1">HTTP Verb</th>
                                     <th class="col-md-4">Judul</th>
                                     <th class="col-md-2">Aksi</th>
                                 </tr>
@@ -65,21 +67,27 @@
                                     <code>/api/{{$row->url}}</code>
                                 </td>
                                 <td>
+                                    <p>{{$row->kelompok}}</p>
+                                </td>
+                                <td>
                                     <strong>GET</strong>
                                 </td>
                                 <td>
                                     <strong>{{$row->judul}}</strong>
                                 </td>
                                 <td>
-                                    <a href="{{ url(" edit/$row->id") }}">
+                                    <a href="{{ url("edit/$row->id") }}">
                                         <img class="btn" title="Ubah" src="{{ asset('img/glyphicons-151-edit.png')}}">
                                     </a>&nbsp;|&nbsp;
-                                    <form action="{{ url(" delete/$row->id") }}" method="POST" style="display: inline;"> {{ csrf_field() }} {{ method_field('DELETE')
-                                        }}
+                                    <a href="{{ url("delete/confirm/$row->id") }}">
+                                        <img class="btn" title="Hapus" src="{{ asset('img/glyphicons-208-remove.png')}}">
+                                    </a>
+                                    {{--  <form action="{{ url("delete/$row->id") }}" method="POST" style="display: inline;"> 
+                                    {{ csrf_field() }} {{ method_field('DELETE')}}
                                         <button class="btn">
                                             <img title="Hapus" src="{{ asset('img/glyphicons-208-remove.png')}}">
                                         </button>
-                                    </form>
+                                    </form>  --}}
                                     {{--
                                     <a href="/delete/{{$row->id}}">
                                         <img title="Hapus" src="{{ asset('img/glyphicons-208-remove.png')}}">

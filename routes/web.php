@@ -22,6 +22,7 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/add', 'ApiController@index')->name('add');
     Route::post('/add', 'ApiController@store');
+    Route::get('/delete/confirm/{id}', 'HomeController@deleteConfirm')->name('delete');
     Route::delete('/delete/{id}', 'ApiController@destroy');
     Route::get('/edit/{id}', 'ApiController@edit');
 	Route::patch('/edit/{id}', 'ApiController@update');

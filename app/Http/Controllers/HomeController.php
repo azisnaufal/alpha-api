@@ -25,7 +25,14 @@ class HomeController extends Controller
     public function index()
     {
         $data['result'] = \App\Api::all();
+        
         return view('home')->with($data);
+    }
+    public function deleteConfirm($id)
+    {
+        $data['result'] = \App\Api::where('id', $id)->get();
+        $data['id'] = $id;
+        return view('admin/delete')->with($data);
     }
      public function nyobaan()
     {
