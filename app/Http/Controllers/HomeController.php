@@ -39,5 +39,10 @@ class HomeController extends Controller
         $data['result'] = \App\Api::all();
         return view('nyobaan')->with($data);
     }
+    public function homeku()
+    {
+        $data['result'] = \App\Api::all();
+        return view('homeasli')->with($data);
+    }
 
 }
