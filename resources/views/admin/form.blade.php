@@ -22,6 +22,10 @@
                             <input name="sql_stat" class="form-control" type="text" placeholder="Contoh : SELECT * FROM tb_konsolidasi" value="{{@$result->sql_stat}}"/>
                         </div>
                         <div class="form-group">
+                            <label for="contain">Kelompok</label>
+                            <input name="kelompok" class="form-control" type="text" placeholder="Contoh : Golongan darah" value="{{@$result->kelompok}}"/>
+                        </div>
+                        <div class="form-group">
                             <label for="contain">URL</label>
                             <input name="url" class="form-control" type="text" placeholder="Contoh : konsolidasi/jumlah/penduduk/goldar_a" value="{{@$result->url}}"/>
                         </div>

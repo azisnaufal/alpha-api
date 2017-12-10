@@ -11,10 +11,12 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/dataTables.bootstrap.min.css') }}">    
+    {{--  <link href="{{ asset('css/app.css') }}" rel="stylesheet">  --}}
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/dataTables.bootstrap.min.css') }}">
+      
     {{--  JS  --}}
-    <script type="text/javascript" language="javascript" src="{{ asset('js/jquery-1.12.4.js') }}">
+    <script type="text/javascript" language="javascript" src="{{ asset('js/app.js') }}">
 	</script>
 	<script type="text/javascript" language="javascript" src="{{ asset('js/jquery.dataTables.min.js') }}">
 	</script>
@@ -27,6 +29,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
+
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
