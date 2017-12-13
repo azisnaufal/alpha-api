@@ -49,7 +49,7 @@
                         <table class="table table-bordered"  id="tb_endpoints" cellspasing="0">
                             <thead>
                                 <tr class="info ">
-                                    <th class="col-md-3">URL</th>
+                                    <th class="col-md-3">URI</th>
                                     <th class="col-md-1">Kelompok</th>
                                     <th class="col-md-1">HTTP Verb</th>
                                     <th class="col-md-4">Judul</th>
