@@ -50,15 +50,7 @@
                                     <th class="col-md-2">Aksi</th>
                                 </tr>
                             </thead>
-                            <tfoot>
-                                <tr class="info ">
-                                    <th class="col-md-3">URL</th>
-                                    <th class="col-md-1">Kelompok</th>
-                                    <th class="col-md-1">HTTP Verb</th>
-                                    <th class="col-md-4">Judul</th>
-                                    <th class="col-md-2">Aksi</th>
-                                </tr>
-                            </tfoot>
+                        
                             <tbody>
                             
                             @foreach ($result as $row)

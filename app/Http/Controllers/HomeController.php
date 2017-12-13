@@ -32,7 +32,7 @@ class HomeController extends Controller
     {
         $data['result'] = \App\Api::where('id', $id)->get();
         $data['id'] = $id;
-        return view('admin/delete')->with($data);
+        return view('hapus')->with($data);
     }
      public function nyobaan()
     {

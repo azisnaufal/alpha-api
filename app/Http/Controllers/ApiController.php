@@ -57,7 +57,7 @@ class ApiController extends Controller
     public function update(Request $request, $id){
       $rules = [
         'judul'	=> 'required|max:191',
-              'sql_stat'		=> 'required|max:191',
+              'sql_stat'		=> '',
               'url' => 'required|max:200'
       ];
       $this->validate($request, $rules);
