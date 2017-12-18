@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 @extends('layouts.app') @section('content')
 
+=======
+
+@extends('layouts.app') @section('content')
+
+
+>>>>>>> 257c182cfa9640d55335fed90cd3ee5f41afc7ac
 <div class="container">
     <div class="row">
         <div class="col-md-12">
