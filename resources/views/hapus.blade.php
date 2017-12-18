@@ -11,7 +11,7 @@
                         Apakah anda yakin mau menghapus endpoint yang satu ini?
                     </p>
                     <div class="table-responsive">
-                        <table class="table table-bordered"  id="tb_endpointss" cellspasing="0">
+                        <table class="table table-bordered" >
                             <thead>
                                 <tr class="info ">
                                     <th class="col-md-3">URL</th>
@@ -46,8 +46,8 @@
                         <form class="pull-right" action="{{ url("delete/$id") }}" method="POST"> 
                                     {{ csrf_field() }} 
                                     {{ method_field('DELETE')}}
-                                        <button type="button" class="btn btn-danger">
-                                            <span class="glyphicon glyphicon-trash"></span>&nbsp;Ya
+                                        <button type="submit" class="btn btn-danger">
+                                            <i class="glyphicon glyphicon-trash"></i>&nbsp;Ya
                                         </button>
                                         
                         </form>
