@@ -64,7 +64,7 @@ $(document).ready(function() {
                             <li><a href="{{ route('login') }}">Login</a></li>
                             
                         @else
-                            <li><a href="{{ route('register') }}">Add Account</a></li>
+                            <li><a href="{{ url('adduser') }}">Add Account</a></li>
                             <li class="dropdown">
                                     <li>
                                         <a href="{{ route('logout') }}"

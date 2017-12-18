@@ -21,6 +21,8 @@ Route::get('/awal', 'HomeController@awal')->name('awal');
 
 Auth::routes();
 Route::group(['middleware'=>'auth'], function(){
+    Route::get('/adduser','HomeController@register');
+    Route::post('/adduser','HomeController@adduser');
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/add', 'ApiController@index')->name('add');
     Route::post('/add', 'ApiController@store');
