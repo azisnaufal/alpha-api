@@ -1,24 +1,20 @@
 @extends('layouts.nav') @section('content')
-		
-    
 
-
- <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            @include('templates/feedback')
-            <div class="panel panel-default">
-                <div class="panel-heading">Dokumentasi REST API
-                    
-                </div>
-
-                <div class="panel-body">
-                    @if (session('status'))
+<div class="container" >
+	<div class="row">
+		<div class="col-md-12"></div>
+		@include('templates/feedback')
+		<div class="card">
+		  <div class="card-header">
+		    Dokumentasi rest API
+		  </div>
+		  <div class="card-body">
+		    @if (session('status'))
                     <div class="alert alert-success">
                         {{ session('status') }}
                     </div>
                     @endif
-                    <h1 style="color:#1b809e;">RESTful API</h1>
+             <h1 style="color:#fed136;">RESTfull API</h1>
                     <p>
                         REST API memungkinkan Anda berinteraksi dengan App dari apapun yang dapat mengirim permintaan HTTP.
                         Ada banyak hal yang dapat Anda lakukan dengan REST API. Sebagai contoh:
@@ -30,7 +26,7 @@
                         </ul>
                     </p>
 
-                    <h3 style="color:#1b809e;">Referensi cepat</h3>
+                    <h3 style="color:#fed136;">Referensi cepat</h3>
 
                                 <p>
                                     
@@ -38,20 +34,20 @@
                                 Awalan path URI <code>/api/</code> menunjukkan bahwa saat ini anda sedang menggunakan fitur REST API pada website kami.
                                 </p>
 
-                    <h3 style="color:#1b809e;">Endpoints <a href="{{url('add')}}">
-                        <img class="pull-right" title="Tambah" src="{{ asset('img/glyphicons-433-plus.png')}}">
-                    </a></h3> 
-                    
+                    <h3 style="color:#fed136;">Endpoints <a href="{{url('add')}}">
+                        <img class="float-right" title="Tambah" src="{{ asset('img/glyphicons-433-plus.png')}}">
+                   </a>
+                </h3>
 
-                    <div class="table-responsive">
-                        <table class="table table-bordered"  id="tb_endpoints" cellspasing="0">
+                    
+                        <table class="table table-responsive table-striped table-bordered" cellspacing="0" width="100%"  id="tb_endpoints">
                             <thead>
                                 <tr class="info ">
-                                    <th class="col-md-3">URL</th>
-                                    <th class="col-md-1">Kelompok</th>
-                                    <th class="col-md-1">HTTP Verb</th>
-                                    <th class="col-md-4">Judul</th>
-                                    <th class="col-md-2">Aksi</th>
+                                    <th>URL</th>
+                                    <th>Kelompok</th>
+                                    <th>HTTP Verb</th>
+                                    <th>Judul</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                         
@@ -93,12 +89,12 @@
                             @endforeach
                             </tbody>
                         </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+		 
+		</div>
+	</div>
 </div>
+		
+    
 
 
 
