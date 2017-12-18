@@ -11,6 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
+
     {{--  <link href="{{ asset('css/app.css') }}" rel="stylesheet">  --}}
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/dataTables.bootstrap.min.css') }}">
@@ -22,6 +23,7 @@
 	</script>
 	<script type="text/javascript" language="javascript" src="{{ asset('js/dataTables.bootstrap.min.js') }}">
 	</script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script>
 $(document).ready(function() {
     $('#tb_endpoints').DataTable();
@@ -60,12 +62,10 @@ $(document).ready(function() {
                         <!-- Authentication Links -->
                         @guest
                             <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            
                         @else
+                            <li><a href="{{ route('register') }}">Add Account</a></li>
                             <li class="dropdown">
-                                
-
-                                
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -79,6 +79,7 @@ $(document).ready(function() {
                                     </li>
                                 
                             </li>
+                            
                         @endguest
                     </ul>
                 </div>
@@ -90,5 +91,20 @@ $(document).ready(function() {
 
     <!-- Scripts -->
     {{--  <script src="{{ asset('js/app.js') }}"></script>  --}}
+    <script>
+    
+
+$('button[name="remove_levels"]').on('click', function(e) {
+  var $form = $(this).closest('form');
+  e.preventDefault();
+  $('#confirm').modal({
+      backdrop: 'static',
+      keyboard: false
+    })
+    .one('click', '#delete', function(e) {
+      $form.trigger('submit');
+    });
+});
+</script>
 </body>
 </html>
