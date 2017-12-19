@@ -28,7 +28,7 @@
 
   </head>
 
-  <body id="page-top">
+  <body >
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -55,7 +55,8 @@
            </li>
 
            <li class="nav-item">
-              <a class="nav-link " data-toggle="modal" data-target="#login-modal">Login</a>
+              <a href="#" class="nav-link " data-toggle="modal" data-target="#loginmodal">Login</a>
+
             </li>
           
           </ul>
@@ -134,22 +135,32 @@
         </div> -->
       </div>
     </footer>
-    <!-- modal -->
-    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-          <div class="modal-dialog">
-                <div class="loginmodal-container">
-                    <h1>Login to Your Account</h1><br>
-                  <form>
-                    <input type="text" name="user" placeholder="Username">
-                    <input type="password" name="pass" placeholder="Password">
-                    <input type="submit" name="login" class="btn btn-primary btn-xl login loginmodal-submit" value="Login">
+    
 
-                  </form>
-                    
-                 
-                </div>
+          
+        <!-- Modal -->
+        <div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="loginmodal" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content loginmodal-container">
+              <div class="modal-header">
+                <h1 class="modal-title " id="loginmodal">Login</h1>
+                
+              </div>
+              <div class="modal-body">
+                 <form>
+                            <input type="text" name="user" id="inputName" placeholder="Username">
+                            <input type="password" name="pass" placeholder="Password">
+                            <input type="submit" name="login" class="btn btn-primary btn-xl login loginmodal-submit" value="Login">
+
+                </form>
+              </div>
+             <!--  <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div> -->
             </div>
           </div>
+        </div>
 
 
     <!-- Bootstrap core JavaScript -->
