@@ -26,8 +26,7 @@
 
                 <div class="panel-body">
 
-                    <form method="post" id="loginform" class="form-horizontal col-md-12" role="form" action="{{ empty($result) ? url('add') : url("
-                        edit/$result->id")}}"> {{ csrf_field() }} @if (!empty($result)) {{ method_field('patch') }} @endif
+                    <form method="post" id="loginform" class="form-horizontal col-md-12" role="form" action="{{ empty($result) ? url('add') : url("edit/$result->id")}}"> {{ csrf_field() }} @if (!empty($result)) {{ method_field('patch') }} @endif
                         <div class="form-group">
                             <label for="contain">Judul</label>
                             <input name="judul" required class="form-control" type="text" placeholder="Contoh : Jumlah Penduduk bergolongan darah A"
@@ -60,14 +59,15 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>
-                                        <button type="submit" class="btn btn-ok btn-primary">Ya</button>
+                                        {{--  <button type="submit" class="btn btn-ok btn-primary">Ya</button>  --}}
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </form>
-                    <button button class="btn btn-primary pull-right" data-record-id="54" data-record-title="Something cool" data-toggle="modal"
+                        <button type="submit"class="btn btn-primary pull-right" data-record-id="54" data-record-title="Something cool" data-toggle="modal"
                         data-target="#confirm-delete">Simpan</button>
+                    </form>
+                    
                 </div>
             </div>
         </div>

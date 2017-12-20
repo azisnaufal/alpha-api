@@ -41,23 +41,37 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
              <li class="nav-item">
-              <a class="nav-link active" href="#">Home</a>
+              <a class="nav-link active" href="{{url('')}}">Home</a>
             </li>
             
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle"#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">List Api</a>
+            <a class="nav-link" href="{{ route('nyobaan') }}">Endpoint</a>
+              {{--  <a class="nav-link dropdown-toggle"#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">List Api</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{{ route('nyobaan') }}">Kependudukan</a>
                   <a class="dropdown-item" href="#">Another action</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#">Something else here</a>
-                </div>
+                </div>  --}}
            </li>
-
+          @guest
            <li class="nav-item">
               <a href="#" class="nav-link " data-toggle="modal" data-target="#loginmodal">Login</a>
-
             </li>
+          @endguest
+          @auth
+          <li class="nav-item">
+            <a href="{{ route('logout') }}" class="nav-link"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+          </li>
+          @endauth
           
           </ul>
         </div>
@@ -84,7 +98,7 @@
             <h3 class="section-subheading text-muted">API Bandung merupakan sebuah layanan yang menyediakan informasi data yang ada di lingkup Pemerintah Kota Bandung. Data ini mencakup semua bidang yang ada di kota Bandung seperti Kesehatan, Kebersihan, Transportasi, dll. Dengan adanya API Bandung, maka para developer dapat mengembangkan aplikasi mobile atau website menggunakan API yang tersedia.API Bandung merupakan sebuah layanan yang menyediakan informasi data yang ada di lingkup Pemerintah Kota Bandung. Data ini mencakup semua bidang yang ada di kota Bandung seperti Kesehatan, Kebersihan, Transportasi, dll. Dengan adanya API Bandung</h3>
           </div>
         </div>
-        <!-- <div class="row text-center">
+        {{--  <div class="row text-center">
           <div class="col-md-4">
             <span class="fa-stack fa-4x">
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
@@ -109,7 +123,7 @@
             <h4 class="service-heading">Web Security</h4>
             <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
           </div>
-        </div> -->
+        </div>  --}}
       </div>
     </section>
 
@@ -122,7 +136,7 @@
             <span class="copyright">Copyright &copy; Portal API 2017</span>
           </div>
           
-          <!-- <div class="col-md-4">
+          {{--  <div class="col-md-4">
             <ul class="list-inline quicklinks">
               <li class="list-inline-item">
                 <a href="#">Privacy Policy</a>
@@ -132,7 +146,7 @@
               </li>
             </ul>
           </div>
-        </div> -->
+        </div>  --}}
       </div>
     </footer>
     
@@ -147,17 +161,39 @@
                 
               </div>
               <div class="modal-body">
-                 <form>
-                            <input type="text" name="user" id="inputName" placeholder="Username">
-                            <input type="password" name="pass" placeholder="Password">
+                 <form method="POST" action="{{ route('login') }}">
+                  {{ csrf_field() }}
+                  <div class="{{ $errors->has('email') ? ' has-error' : '' }}">
+                    
+                            <input type="text" placeholder="Email" name="email" value="{{ old('email') }}" required autofocus>
+
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        {{ $errors->first('email') }}
+                                    </span>
+                                @endif
+                            
+                        </div>
+                        <div class="{{ $errors->has('password') ? ' has-error' : '' }}">
+                          
+                            <input type="password" required name="password" name="password" placeholder="Password">
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        {{ $errors->first('password') }}
+                                    </span>
+                                @endif
+                            
+                        </div>
                             <input type="submit" name="login" class="btn btn-primary btn-xl login loginmodal-submit" value="Login">
 
                 </form>
-              </div>
-             <!--  <div class="modal-footer">
+                </div>
+              
+             {{--  <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Save changes</button>
-              </div> -->
+              </div>  --}}
             </div>
           </div>
         </div>

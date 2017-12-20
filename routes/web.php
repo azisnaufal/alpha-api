@@ -10,16 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/nyobaan', 'HomeController@nyobaan')->name('nyobaan');
-Route::get('/awal', 'HomeController@awal')->name('awal');
-
-
-
 Auth::routes();
+Route::get('/', function () {
+    return view('awal');
+});
+Route::get('/endpoint', 'GuestController@nyobaan')->name('nyobaan');
+Route::get('/awal', function(){
+    return view('awal');
+});
+
+
 Route::group(['middleware'=>'auth'], function(){
     Route::get('/adduser','HomeController@register');
     Route::post('/adduser','HomeController@adduser');

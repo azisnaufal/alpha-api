@@ -14,7 +14,7 @@
                         {{ session('status') }}
                     </div>
                     @endif
-             <h1 style="color:#fed136;">RESTfull API</h1>
+             <h1 style="color:#fed136;">RESTful API</h1>
                     <p>
                         REST API memungkinkan Anda berinteraksi dengan App dari apapun yang dapat mengirim permintaan HTTP.
                         Ada banyak hal yang dapat Anda lakukan dengan REST API. Sebagai contoh:
@@ -30,13 +30,16 @@
 
                                 <p>
                                     
-                                Semua akses API melalui protokol HTTP, dan diakses melalui domain <mark>http://localhost:8000/</mark>. 
+                                Semua akses API melalui protokol HTTP, dan diakses melalui domain <mark>{{ url('') }}</mark>. 
                                 Awalan path URI <code>/api/</code> menunjukkan bahwa saat ini anda sedang menggunakan fitur REST API pada website kami.
                                 </p>
 
-                    <h3 style="color:#fed136;">Endpoints <a href="{{url('add')}}">
+                    <h3 style="color:#fed136;">Endpoints 
+                    @auth
+                    <a href="{{url('add')}}">
                         <img class="float-right" title="Tambah" src="{{ asset('img/glyphicons-433-plus.png')}}">
-                   </a>
+                    </a>
+                    @endauth
                 </h3>
 
                     
@@ -47,7 +50,9 @@
                                     <th>Kelompok</th>
                                     <th>HTTP Verb</th>
                                     <th>Judul</th>
+                                    @auth
                                     <th>Aksi</th>
+                                    @endauth
                                 </tr>
                             </thead>
                         
@@ -67,6 +72,7 @@
                                 <td>
                                     <strong>{{$row->judul}}</strong>
                                 </td>
+                                @auth
                                 <td>
                                     <a href="{{ url("edit/$row->id") }}">
                                         <img class="btn" title="Ubah" src="{{ asset('img/glyphicons-151-edit.png')}}">
@@ -85,6 +91,7 @@
                                         <img title="Hapus" src="{{ asset('img/glyphicons-208-remove.png')}}">
                                     </a> --}}
                                 </td>
+                                @endauth
                             </tr>
                             @endforeach
                             </tbody>
@@ -94,6 +101,52 @@
 	</div>
 </div>
 		
+        <!-- Modal -->
+        <div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="loginmodal" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content loginmodal-container">
+              <div class="modal-header">
+                <h1 class="modal-title " id="loginmodal">Login</h1>
+                
+              </div>
+              <div class="modal-body">
+                 <form method="POST" action="{{ route('login') }}">
+                  {{ csrf_field() }}
+                  <div class="{{ $errors->has('email') ? ' has-error' : '' }}">
+                    
+                            <input type="text" placeholder="Email" name="email" value="{{ old('email') }}" required autofocus>
+
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        {{ $errors->first('email') }}
+                                    </span>
+                                @endif
+                            
+                        </div>
+                        <div class="{{ $errors->has('password') ? ' has-error' : '' }}">
+                          
+                            <input type="password" required name="password" name="password" placeholder="Password">
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        {{ $errors->first('password') }}
+                                    </span>
+                                @endif
+                            
+                        </div>
+                            <input type="submit" name="login" class="btn btn-primary btn-xl login loginmodal-submit" value="Login">
+
+                </form>
+                </div>
+              
+             {{--  <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>  --}}
+            </div>
+          </div>
+        </div>
+
     
 
 
