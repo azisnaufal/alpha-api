@@ -6,7 +6,7 @@
 		@include('templates/feedback')
 		<div class="card">
 		  <div class="card-header">
-		    Dokumentasi rest API
+		   <h5> Dokumentasi rest API </h5>
 		  </div>
 		  <div class="card-body">
 		    @if (session('status'))
@@ -18,7 +18,7 @@
                     <p>
                         REST API memungkinkan Anda berinteraksi dengan App dari apapun yang dapat mengirim permintaan HTTP.
                         Ada banyak hal yang dapat Anda lakukan dengan REST API. Sebagai contoh:
-                        <ul>
+                        <ul class="desk">
                             <li>Aplikasi seluler dapat mengakses data App.</li>
                             <li>Webserver dapat menampilkan data dari Aplikasi ini di situs web.</li>
                             <li>Aplikasi yang ditulis dalam bahasa pemrograman apapun dapat berinteraksi dengan data pada Aplikasi
