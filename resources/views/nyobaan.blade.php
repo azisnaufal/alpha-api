@@ -106,7 +106,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content loginmodal-container">
               <div class="modal-header">
-                <h1 class="modal-title " id="loginmodal">Login</h1>
+                <h2 class="modal-title" id="loginmodal">Login</h2>
                 
               </div>
               <div class="modal-body">
