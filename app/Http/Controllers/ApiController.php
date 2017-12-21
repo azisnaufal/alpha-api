@@ -58,7 +58,7 @@ class ApiController extends Controller
       $rules = [
         'judul'	=> 'required|max:191',
               'sql_stat'		=> '',
-              'url' => 'required|max:200'
+              'url' => 'required|max:200|regex:/^[A-Za-z0-9\/]+$/'
       ];
       $this->validate($request, $rules);
 

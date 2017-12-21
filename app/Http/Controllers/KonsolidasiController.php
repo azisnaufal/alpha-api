@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Konsolidasi;
+use Illuminate\Database\QueryException;
 
 class KonsolidasiController extends Controller
 {
@@ -361,10 +362,25 @@ class KonsolidasiController extends Controller
       return response($res);
     }
     public function link(\Symfony\Component\HttpFoundation\Request $request, $link){
-      $sql = DB::select(DB::raw("SELECT sql_stat FROM tbl_api WHERE url = '$link'"));
-      $data = DB::select($sql[0]->sql_stat);
-      $res['success'] = 200;
-      $res['result'] = $data;
+      // $sql = DB::select(DB::raw("SELECT sql_stat FROM tbl_api WHERE url = '$link'"));
+      // $data = DB::select($sql[0]->sql_stat);
+      // $res['success'] = 200;
+      // $res['result'] = $data;
+      // return response($res);
+
+      try { 
+        $sql = DB::select(DB::raw("SELECT sql_stat FROM tbl_api WHERE url = '$link'"));
+        $data = DB::select($sql[0]->sql_stat);
+        $res['success'] = 200;
+        $res['result'] = $data;
+      } catch(\Illuminate\Database\QueryException $ex){ 
+        // dd($ex->getMessage()); 
+        $res['error'] = 500;
+        $res['result'] = "queryexception";
+      }
       return response($res);
+
+
+
     }
 }

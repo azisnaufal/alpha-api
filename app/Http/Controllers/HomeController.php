@@ -37,11 +37,13 @@ class HomeController extends Controller
      public function nyobaan()
     {
         $data['result'] = \App\Api::all();
+        $data['thisis'] = "endpoint";
         return view('nyobaan')->with($data);
     }
     public function awal()
     {
         $data['result'] = \App\Api::all();
+        $data['thisis'] = "home";
         return view('awal')->with($data);
     }
     public function register(){

@@ -1,4 +1,4 @@
-@extends('layouts.nav') @section('content')
+@extends('layouts.nav',['thisis' => "endpoint"]) @section('content')
 
 <div class="container" >
 	<div class="row">
@@ -6,7 +6,7 @@
 		@include('templates/feedback')
 		<div class="card">
 		  <div class="card-header">
-		   <h2> Dokumentasi rest API </h2>
+		   <h2> Dokumentasi REST API</h2>
 		  </div>
 		  <div class="card-body">
 		    @if (session('status'))

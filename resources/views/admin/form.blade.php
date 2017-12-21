@@ -1,4 +1,4 @@
-@extends('layouts.nav') @section('content')
+@extends('layouts.nav',['thisis' => ""]) @section('content')
 <style>
     .modal.loading .modal-content:before {
         content: 'Loading...';
@@ -53,6 +53,11 @@
                             <input name="url" required class="form-control" type="text" placeholder="Contoh : konsolidasi/jumlah/penduduk/goldar_a" value="{{@$result->url}}"
                             />
                         </div>
+                        @if ($errors->has('url'))
+                            <span class="help-block">
+                                Anda memasukan karakter ilegal ke dalam kolom URL</br>
+                            </span>
+                        @endif
                         <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
