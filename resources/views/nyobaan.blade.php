@@ -6,7 +6,7 @@
 		@include('templates/feedback')
 		<div class="card">
 		  <div class="card-header">
-		   <h5> Dokumentasi rest API </h5>
+		   <h2> Dokumentasi rest API </h2>
 		  </div>
 		  <div class="card-body">
 		    @if (session('status'))
@@ -14,7 +14,7 @@
                         {{ session('status') }}
                     </div>
                     @endif
-             <h1 style="color:#fed136;">RESTful API</h1>
+             <h3 style="color:#fed136;">RESTful API</h3>
                     <p>
                         REST API memungkinkan Anda berinteraksi dengan App dari apapun yang dapat mengirim permintaan HTTP.
                         Ada banyak hal yang dapat Anda lakukan dengan REST API. Sebagai contoh:
@@ -51,7 +51,7 @@
                                     <th>HTTP Verb</th>
                                     <th>Judul</th>
                                     @auth
-                                    <th>Aksi</th>
+                                    <th  >Aksi</th>
                                     @endauth
                                 </tr>
                             </thead>

@@ -32,6 +32,7 @@
   <!-- Custom styles for this template -->
   <link href="{{ asset('css/agency.css') }}" rel="stylesheet">
   <link href="{{ asset('css/modalLogin.css')}}" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/card.css') }}">
 
 </head>
 

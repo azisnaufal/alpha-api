@@ -17,12 +17,17 @@
 </style>
 <div class="container">
     <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
+        <div class="col-lg-12 col-lg-offset-2">
             <div class="card card-default">
                 <div class="card-header">
-                    <a href="{{url('home')}}">
+                    <div class="arrow-back">
+                        <a href="{{url('home')}}">
                         <img class="pull-left" title="Kembali" src="{{ asset('img/glyphicons-225-chevron-left.png')}}">
-                    </a>&nbsp;&nbsp; Tambah endpoint</div>
+                    </a>
+                    </div>
+                    
+                    <h2>Tambah endpoint</h2>
+                </div>
 
                 <div class="card-body">
 
