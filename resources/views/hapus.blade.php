@@ -1,11 +1,11 @@
-@extends('layouts.app') @section('content')
+@extends('layouts.nav') @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             @include('templates/feedback')
-            <div class="panel panel-default">
+            <div class="card card-default">
 
-                <div class="panel-body">
+                <div class="card-body">
                     <h1 style="color:#1b809e;">Konfirmasi</h1>
                     <p>
                         Apakah anda yakin mau menghapus endpoint yang satu ini?
@@ -14,10 +14,10 @@
                         <table class="table table-bordered" >
                             <thead>
                                 <tr class="info ">
-                                    <th class="col-md-3">URL</th>
-                                    <th class="col-md-1">Kelompok</th>
-                                    <th class="col-md-1">HTTP Verb</th>
-                                    <th class="col-md-4">Judul</th>
+                                    <th class="">URL</th>
+                                    <th class="">Kelompok</th>
+                                    <th class="">HTTP Verb</th>
+                                    <th class="">Judul</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -43,11 +43,12 @@
                         <a href="javascript:history.back()" class="btn btn-default" role="button">
                                             <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Kembali
                                         </a>
-                        <form class="pull-right" action="{{ url("delete/$id") }}" method="POST"> 
+                        <form class="float-right" action="{{ url("delete/$id") }}" method="POST"> 
                                     {{ csrf_field() }} 
                                     {{ method_field('DELETE')}}
-                                        <button type="submit" class="btn btn-danger">
-                                            <i class="glyphicon glyphicon-trash"></i>&nbsp;Ya
+                                        <button style="float: right; width: 200px;" type="submit" class="btn btn-danger">
+                                            <i class="glyphicon glyphicon-trash"></i>
+                                            Ya
                                         </button>
                                         
                         </form>

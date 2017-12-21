@@ -52,7 +52,7 @@
                                     <th>HTTP Verb</th>
                                     <th>Judul</th>
                                     @auth
-                                    <th  >Aksi</th>
+                                    <th >Aksi</th>
                                     @endauth
                                 </tr>
                             </thead>
