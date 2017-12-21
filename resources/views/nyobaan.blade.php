@@ -14,6 +14,7 @@
                         {{ session('status') }}
                     </div>
                     @endif
+                    
              <h3 style="color:#fed136;">RESTful API</h3>
                     <p>
                         REST API memungkinkan Anda berinteraksi dengan App dari apapun yang dapat mengirim permintaan HTTP.

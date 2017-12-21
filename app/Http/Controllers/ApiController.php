@@ -37,16 +37,16 @@ class ApiController extends Controller
       $input = $request->all();
       $status = \App\Api::create($input);
 
-      if ($status) return redirect('/home')->with('success', 'Api berhasil ditambahkan');
-      else return redirect('/home')->with('error', 'Api gagal ditambahkan');
+      if ($status) return redirect('/endpoint')->with('success', 'Api berhasil ditambahkan');
+      else return redirect('/endpoint')->with('error', 'Api gagal ditambahkan');
     }
     
     public function destroy(Request $request, $id) {
       $result = \App\Api::where('id', $id)->first();
       $status = $result->delete();
 
-      if ($status) return redirect('/home')->with('success', 'Data berhasil dihapus');
-      else return redirect('/home')->with('error', 'Data gagal dihapus');
+      if ($status) return redirect('/endpoint')->with('success', 'Data berhasil dihapus');
+      else return redirect('/endpoint')->with('error', 'Data gagal dihapus');
     }
 
     public function edit($id) {
@@ -66,7 +66,7 @@ class ApiController extends Controller
       $result = \App\Api::where('id', $id)->first();
       $status = $result->update($input);
 
-      if ($status) return redirect('/home')->with('success', 'Data berhasil diubah');
-      else return redirect('/home')->with('error', 'Data gagal diubah');
+      if ($status) return redirect('/endpoint')->with('success', 'Data berhasil diubah');
+      else return redirect('/endpoint')->with('error', 'Data gagal diubah');
 	}
 }

@@ -1,27 +1,20 @@
 
 @if(session('success'))
-	<div class="alert alert-success fade in">
-		<button type="button" class="close pull-right" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		</button>
+	<div class="alert alert-success">
+
 		{!! session('success') !!}
 	</div>
 @endif
 
 @if(session('error'))
-	<div class="alert alert-danger fade in">
-		<button class="close pull-right" type="button" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		</button>
+	<div class="alert alert-danger">
+
 		{!! session('error') !!}
 	</div>
 @endif
 
 @if (count($errors) > 0)
-	<div class="alert alert-danger fade in">
-		<button class="close pull-right" type="button" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		</button>
+	<div class="alert alert-danger">
 		<p>Perhatian.</p>
 		<ul>
 			@foreach($errors->all() as $error)

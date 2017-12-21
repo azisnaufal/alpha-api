@@ -5,6 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
+        	
             @include('templates/feedback')
             <div class="panel panel-default">
                 <div class="panel-heading">Dokumentasi REST API
