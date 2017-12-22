@@ -18,4 +18,10 @@ class GuestController extends Controller
         $data['result'] = \App\Api::all();
         return view('awal')->with($data);
     }
+    public function detil()
+    {
+        $data['result'] = \App\Api::all();
+        return view('detil')->with($data);
+    }
+
 }

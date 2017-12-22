@@ -1,4 +1,4 @@
-@extends('layouts.nav') @section('content')
+@extends('layouts.nav',['thisis' => ""]) @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -61,4 +61,4 @@
 </div>
 
 
-@endsection
+@endsection 

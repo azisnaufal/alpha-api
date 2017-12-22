@@ -15,7 +15,8 @@ Route::get('/', function () {
     return view('awal');
 });
 Route::get('/endpoint', 'GuestController@nyobaan')->name('nyobaan');
-Route::get('/awal', function(){
+Route::get('/detil',  'GuestController@detil')->name('detil');
+Route::get('/awal', function(){  
     return view('awal');
 });
 
