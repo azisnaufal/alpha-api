@@ -1,7 +1,7 @@
 @extends('layouts.nav',['thisis' => "endpoint"]) @section('content')
 <link href="https://use.fontawesome.com/releases/v5.0.2/css/all.css" rel="stylesheet">
 <div class="container" >
-	<div class="row">
+	<div class="">
 		<div class="col-md-12"></div>
 		@include('templates/feedback')
 		<div class="card">
@@ -98,7 +98,7 @@
 						  </div>
 						  <div class="card-block">
 						    <blockquote class="card-blockquote">
-										<pre id="result"></pre>
+										<pre id="result" style="margin-left: 20px"></pre>
 						     
 						    </blockquote>
 							</div>
@@ -113,8 +113,8 @@
                 		<div class="card-body">
                 			<h3>Keterangan setiap objek</h3>
                 		
- 						<table class="table table-responsive table-striped table-bordered" cellspacing="0" width="100%" >
-                			<thead>
+ 						<table class="table table-responsive-sm table-striped table-bordered" cellspacing="0" width="100%" >
+                			<thead class="thead-dark">
                 				<tr>
                 				
 							      
