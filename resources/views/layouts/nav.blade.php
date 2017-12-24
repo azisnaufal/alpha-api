@@ -33,6 +33,7 @@
   <link href="{{ asset('css/agency.css') }}" rel="stylesheet">
   <link href="{{ asset('css/modalLogin.css')}}" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/card.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/tableStyle.css') }}">
 
 </head>
 

@@ -45,8 +45,8 @@
                 </h3>
 
                     
-                        <table class="table table-responsive table-striped table-bordered" cellspacing="0" width="100%"  id="tb_endpoints">
-                            <thead>
+                        <table class="table table-responsive table-striped table-bordered " cellspacing="0" width="100%"  id="tb_endpoints">
+                            <thead class="thead-dark">
                                 <tr class="info ">
                                     <th>URL</th>
                                     <th>Kelompok</th>
@@ -58,7 +58,7 @@
                                 </tr>
                             </thead>
                         
-                            <tbody>
+                            <tbody class="tableku">
                             
                             @foreach ($result as $row)
                             <tr>
