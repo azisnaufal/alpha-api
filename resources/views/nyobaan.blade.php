@@ -45,7 +45,7 @@
                 </h3>
 
                     
-                        <table class="table table-responsive table-striped table-bordered " cellspacing="0" width="100%"  id="tb_endpoints">
+                        <table  class="table table-responsive table-striped table-bordered " cellspacing="0" width="100%"  id="tb_endpoints">
                             <thead class="thead-dark">
                                 <tr class="info ">
                                     <th>URL</th>
@@ -62,7 +62,7 @@
                             
                             @foreach ($result as $row)
                             <tr>
-                                <td>
+                                <td >
                                     <a href="{{url("detil/$row->id")}}"><code>/api/{{$row->url}}</code></a>
                                 </td>
                                 <td>
@@ -76,7 +76,7 @@
                                 </td>
                                 @auth
                                 <td>
-                                    <a href="{{ url("edit/$row->id") }}">
+                                    <!-- <a href="{{ url("edit/$row->id") }}">
                                         <img class="btn" title="Ubah" src="{{ asset('img/glyphicons-151-edit.png')}}">
                                     </a>&nbsp;|&nbsp;
                                     <a href="{{ url("delete/confirm/$row->id") }}">
@@ -91,7 +91,19 @@
                                     {{--
                                     <a href="/delete/{{$row->id}}">
                                         <img title="Hapus" src="{{ asset('img/glyphicons-208-remove.png')}}">
-                                    </a> --}}
+                                    </a> --}} -->
+                                        <span class="btn-group pull-right" style="margin-top: 5px">
+                                                <button class="btn btn-warning btn-xs" title="ubah">
+                                                    <a href="{{ url("edit/$row->id") }}">
+                                                    <i class="fa fa-pencil-square-o fa-lg" style="text-decoration: none; color: black;"></i>
+                                                    </a>
+                                                </button>
+                                                <button class="btn btn-danger btn-xs">
+                                                    <a href="{{ url("delete/confirm/$row->id") }}">
+                                                    <i class="fa fa-trash-o fa-lg" style="color: black;" ></i>
+                                                    </a>
+                                                </button>
+                                        </span>
                                 </td>
                                 @endauth
                             </tr>
