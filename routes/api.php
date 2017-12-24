@@ -20,7 +20,7 @@ Route::get('/ex', function (Request $request) {
     return $request->segment(1);
 });
 
-Route::get('/{link?}','KonsolidasiController@link')->where('link', '(.*)');;
+// Route::get('/{link?}','KonsolidasiController@link')->where('link', '(.*)');;
 Route::get('/konsolidasi', 'KonsolidasiController@index');
 Route::get('/konsolidasi/jumlah/penduduk/kelurahan', 'KonsolidasiController@jumlah_penduduk_perkelurahan');
 Route::get('/konsolidasi/jumlah/penduduk/kecamatan', 'KonsolidasiController@jumlah_penduduk_perkecamatan');

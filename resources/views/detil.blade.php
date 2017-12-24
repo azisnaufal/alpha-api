@@ -12,10 +12,10 @@
                 <div class="card-body">
                 	<div>
                 		<h3>Endpoint</h3>
-                		<input class="form-control" type="text" placeholder="GET https://api.spotify.com/v1/albums/{id}" readonly>
+                		<input class="form-control" type="text" value="GET {{url("api/$result->url")}}" readonly>
                 	</div>
 
-                	<div>
+                	{{--  <div>
                 		<h3>Request Parameter</h3>
                 		<div>
                 			<table class="table table-responsive table-striped table-bordered" cellspacing="0" width="100%" >
@@ -92,7 +92,7 @@
                 			On success, the HTTP status code in the response header is 200 OK and the response body contains an album object in JSON format. On error, the header status code is an error code and the response body contains an error object.
                 		</p>
                 	</div>
-                	<div>
+                	<div>  --}}
 						<div class="card">
 						  <div class="card-header">
 						    Quote
