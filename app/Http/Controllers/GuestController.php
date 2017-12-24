@@ -15,12 +15,12 @@ class GuestController extends Controller
     }
     public function awal()
     {
-        $data['result'] = \App\Api::all();
-        return view('awal')->with($data);
+        return view('awal');
     }
-    public function detil()
+    public function detil($id)
     {
-        $data['result'] = \App\Api::all();
+        $data['result'] = \App\Api::where('id', $id)->first();
+        $data['id'] = $id;
         return view('detil')->with($data);
     }
 

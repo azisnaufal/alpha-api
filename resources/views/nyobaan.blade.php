@@ -63,7 +63,7 @@
                             @foreach ($result as $row)
                             <tr>
                                 <td>
-                                    <code>/api/{{$row->url}}</code>
+                                    <a href="{{url("detil/$row->id")}}"><code>/api/{{$row->url}}</code></a>
                                 </td>
                                 <td>
                                     <p>{{$row->kelompok}}</p>
