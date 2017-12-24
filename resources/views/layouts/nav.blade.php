@@ -32,6 +32,7 @@
   <link href="{{ asset('css/agency.css') }}" rel="stylesheet">
   <link href="{{ asset('css/modalLogin.css')}}" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/card.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/tableStyle.css') }}">
 
 </head>
 
@@ -136,6 +137,7 @@
   <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
   <script src="{{ asset('vendor/datatables/jquery.dataTables.js') }}"></script>
   <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.js') }}"></script>
+  <script src="{{ asset('js/sweetalert.js') }}"></script>
 
   <!-- Contact form JavaScript -->
   <script src="{{ asset('js/jqBootstrapValidation.js') }}"></script>
@@ -148,8 +150,7 @@
       $('#tb_endpoints').DataTable();
     });
   </script>
-
-
+  
 
 </body>
 

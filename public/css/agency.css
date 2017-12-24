@@ -19,6 +19,10 @@ a {
   color: #fed136; }
   a:hover {
     color: #fec503; }
+    a:link{
+      color:#a52727;
+      text-decoration: none;
+    }
 
 .text-primary {
   color: #fed136 !important; }
@@ -175,10 +179,6 @@ header.masthead {
       line-height: 75px;
       margin-bottom: 50px;
       font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; } }
-
-.service-heading {
-  margin: 15px 0;
-  text-transform: none; }
 
 
 
