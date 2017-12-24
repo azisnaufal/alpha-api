@@ -10,7 +10,6 @@
   <meta name="author" content="">
 
   <title>Portal Api</title>
-
   <!-- Bootstrap core CSS -->
   <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   <!-- Styles -->

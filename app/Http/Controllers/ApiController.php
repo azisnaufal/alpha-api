@@ -33,7 +33,7 @@ class ApiController extends Controller
               'kelompok' => 'required'
       ];
       $this->validate($request, $rules);
-
+      
       $input = $request->all();
       $status = \App\Api::create($input);
 
