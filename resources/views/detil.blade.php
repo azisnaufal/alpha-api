@@ -1,16 +1,18 @@
-@extends('layouts.nav',['thisis' => ""]) @section('content')
-
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12 col-lg-offset-2">
-            <div class="card card-default">
-                <div class="card-header">
-                    <h2>Tambah endpoint</h2>
-                </div>
 
 
-                <div class="card-body">
-                	<div>
+
+@extends('layouts.nav',['thisis' => "endpoint"]) @section('content')
+
+<div class="container" >
+	<div class="row">
+		<div class="col-md-12"></div>
+		@include('templates/feedback')
+		<div class="card">
+		  <div class="card-header">
+		   <h2>Detail EndPoint</h2>
+		  </div>
+		  <div class="card-body">
+		  <div>
                 		<h3>Endpoint</h3>
                 		<input class="form-control" type="text" value="GET {{url("api/$result->url")}}" readonly>
                 	</div>
@@ -132,16 +134,20 @@
 						    </tr>
                 		</table>
                 	</div>
-
-
-                	
-
                     
-                        
-                        
-                     
-                </div>
-            </div>
-        </div>
-    </div>
+           
+             
+		 
+		</div>
+	</div>
 </div>
+		
+        <!-- Modal -->
+        
+    
+
+
+
+
+
+@endsection
