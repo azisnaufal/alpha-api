@@ -1,3 +1,4 @@
+
 @extends('layouts.nav',['thisis' => "endpoint"]) @section('content')
 
 <div class="container" >
@@ -147,6 +148,22 @@
             </div>
           </div>
         </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+            $('body').on('click','td.warning input',function () { 
+                        
+                            
+                            function (isConfirm) {
+                                if (isConfirm) {
+                                    swal("Deleted!", "Your imaginary file has been deleted!", "success");
+                                } else {
+                                    swal("Cancelled", "Your imaginary file is safe :)", "error");
+                                }
+                            });
+                        });
+
+            });
+  </script>
 
     
 
