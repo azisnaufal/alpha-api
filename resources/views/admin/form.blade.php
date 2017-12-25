@@ -40,9 +40,15 @@
                         </div>
                         <div class="form-group">
                             <label for="contain">Query SQL</label>
+                            @if ($errors->has('sql_stat'))
+                            <small class="help-block">
+                                &nbsp;&nbsp;&nbsp;&nbsp;Mohon kapitalkan bagian ini "... SUM(...) AS ..."</br>
+                            </small>
+                        @endif
                             <input name="sql_stat" class="form-control" type="text" placeholder="Contoh : SELECT * FROM tb_konsolidasi" value="{{@$result->sql_stat}}"
                             />
                         </div>
+                       
                         <div class="form-group">
                             <label for="contain">Kelompok</label> <label style="color:red;">*</label>
                             <input name="kelompok" required class="form-control" type="text" placeholder="Contoh : Golongan darah" value="{{@$result->kelompok}}"

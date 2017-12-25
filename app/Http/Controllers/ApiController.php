@@ -23,13 +23,14 @@ class ApiController extends Controller
      */
     public function index()
     {
-        return view('admin/form');
+        $data['kapital'] = 0;
+        return view('admin/form')->with($data);
     }
     public function store(Request $request){
       $rules = [
               'judul'	=> 'required|max:191',
-              'sql_stat'		=> '',
-              'url' => 'required|max:200',
+              'sql_stat'		=> 'sql_check',
+              'url' => 'required|max:200|regex:/^[A-Za-z0-9\/]+$/',
               'kelompok' => 'required'
       ];
       $this->validate($request, $rules);
@@ -57,7 +58,7 @@ class ApiController extends Controller
     public function update(Request $request, $id){
       $rules = [
         'judul'	=> 'required|max:191',
-              'sql_stat'		=> '',
+              'sql_stat'		=> 'sql_check',
               'url' => 'required|max:200|regex:/^[A-Za-z0-9\/]+$/'
       ];
       $this->validate($request, $rules);
