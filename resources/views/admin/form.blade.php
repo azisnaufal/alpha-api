@@ -75,15 +75,15 @@
                                         <p>Apakah anda yakin dengan data ini?</p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-ok btn-primary" data-dismiss="modal">Tidak</button>
+                                        <button type="button" class="btn btn-ok btn-primary" data-dismiss="modal" style="color: black">Tidak</button>
 
-                                        <button type="submit" class="btn btn-ok btn-primary">Ya</button>
+                                        <button type="submit" class="btn btn-ok btn-primary" style="color: black">Ya</button>
                                          
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <a href="javascript:history.back()" class="btn btn-default pull-left" role="button">
+                        <a href="javascript:history.back()" class="btn btn-default pull-left" role="button" style="color: black;">
                                             <i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;Kembali
                         </a>
                         <button type="button"class="btn btn-primary pull-right" data-record-id="54" data-record-title="Something cool" data-toggle="modal"

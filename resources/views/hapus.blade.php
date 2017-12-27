@@ -6,7 +6,7 @@
             <div class="card card-default">
 
                 <div class="card-body">
-                    <h1 style="color:#1b809e;">Konfirmasi</h1>
+                    <h1 style="color:black;">Konfirmasi</h1>
                     <p>
                         Apakah anda yakin mau menghapus endpoint yang satu ini?
                     </p>
@@ -40,13 +40,13 @@
                             @endforeach
                             </tbody>
                         </table>
-                        <a href="javascript:history.back()" class="btn btn-default" role="button">
-                                            <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Kembali
+                        <a href="javascript:history.back()" class="btn btn-default" role="button" style="color: black;">
+                                            <i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;Kembali
                                         </a>
                         <form class="float-right" action="{{ url("delete/$id") }}" method="POST"> 
                                     {{ csrf_field() }} 
                                     {{ method_field('DELETE')}}
-                                        <button style="float: right; width: 200px;" type="submit" class="btn btn-danger">
+                                        <button style="float: right; width: 200px;color: black !important;" type="submit" class="btn btn-danger" ">
                                             <i class="glyphicon glyphicon-trash"></i>
                                             Ya
                                         </button>
