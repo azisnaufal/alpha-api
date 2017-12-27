@@ -64,8 +64,8 @@
               <a class="dropdown-item" href="#">Another action</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Something else here</a>
-            </div>  --}}
-          </li>
+            </div>  
+          </li>--}}
           @guest
           <li class="nav-item">
               <a href="#" class="nav-link " data-toggle="modal" data-target="#loginmodal">Login</a>
@@ -73,8 +73,8 @@
           @endguest 
           @auth
           <li class="nav-item">
-              <a class="nav-link @if ($thisis == "usermgmt") {{"active"}} @endif" href="{{ route('usermgmt') }}">Manage User</a>
-            </li>
+              <a class="nav-link @if($thisis == "usermgmt"){{"active"}}@endif" href="{{ route('usermgmt') }}">Manage User</a>
+          </li>
 
           <li class="nav-item">
             <a href="{{ route('logout') }}" class="nav-link"

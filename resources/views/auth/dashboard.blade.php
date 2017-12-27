@@ -23,7 +23,7 @@
 	</div>
 </div>
 		
-        {{--  <!-- Modal -->
+        <!-- Modal -->
         <div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="loginmodal" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content loginmodal-container">
@@ -59,15 +59,15 @@
                             <input type="submit" name="login" class="btn btn-primary btn-xl login loginmodal-submit" value="Login">
 
                 </form>
-                </div>  --}}
+                </div>
               
              {{--  <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Save changes</button>
               </div>  --}}
-            {{--  </div>
+            </div>
           </div>
-        </div>  --}}
+        </div>
         {{--  <script type="text/javascript">
             $(document).ready(function () {
             $('body').on('click','td.warning input',function () { 
