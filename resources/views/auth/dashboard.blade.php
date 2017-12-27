@@ -2,7 +2,7 @@
 @extends('layouts.nav',['thisis' => "usermgmt"]) @section('content')
 
 <div class="container" >
-	<div class="row">
+	<div class="">
 		<div class="col-md-12"></div>
 		@include('templates/feedback')
 		<div class="card">
@@ -15,77 +15,65 @@
                         {{ session('status') }}
                     </div>
                     @endif
-                    
+                <h3 style="color:#fed136;">Daftar User
+                    @auth
+                    <a href="{{url('/usermgmt/add')}}">
+                        <img class="float-right" title="Tambah" src="{{ asset('img/glyphicons-433-plus.png')}}">
+                    </a>
+                    @endauth
+                </h3>
+
+               <table  class="table table-responsive table-striped table-bordered " cellspacing="0" width="100%"  id="tb_user">
+                            <thead class="thead-dark">
+                                <tr class="info ">
+                                    <th>id</th>
+                                    <th>email</th>
+                                    <th>password</th>
+                                    @auth
+                                    <th >Aksi</th>
+                                    @endauth
+                                </tr>
+                            </thead>
+                        
+                            <tbody class="tableku">
+                          
+                            <tr>
+
+                           <th scope="row">1</th>
+                                <td >admin@admin.crom</td>
+                                <td>123145214</td>
+                              
+                                <td>
+                                    
+                              
+                                   
+                                        <span class="btn-group pull-right" style="margin-top: 5px">
+                                            <a href="{{url('/usermgmt/edit')}}">
+                                                <button class="btn btn-warning btn-xs" title="ubah">
+                                                    <i class="fa fa-pencil-square-o fa-lg" style="text-decoration: none; color: black;"></i>
+                                                </button>
+                                            </a>
+                                            <a href="{{url('/usermgmt/delete')}}">
+                                                <button class="btn btn-danger btn-xs">
+                                                    <i class="fa fa-trash-o fa-lg" style="color: black;" ></i>
+                                                </button>
+                                            </a>
+                                        </span>
+                                </td>
+                               
+                            </tr>
+                            
+                            </tbody>
+                        </table>   
                     
              
 		 
-		</div>
-	</div>
-</div>
+		  </div>
+	   </div>
+    </div>
+  </div>
 		
-        <!-- Modal -->
-        <div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="loginmodal" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content loginmodal-container">
-              <div class="modal-header">
-                <h2 class="modal-title" id="loginmodal">Login</h2>
-                
-              </div>
-              <div class="modal-body">
-                 <form method="POST" action="{{ route('login') }}">
-                  {{ csrf_field() }}
-                  <div class="{{ $errors->has('email') ? ' has-error' : '' }}">
-                    
-                            <input type="text" placeholder="Email" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        {{ $errors->first('email') }}
-                                    </span>
-                                @endif
-                            
-                        </div>
-                        <div class="{{ $errors->has('password') ? ' has-error' : '' }}">
-                          
-                            <input type="password" required name="password" name="password" placeholder="Password">
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        {{ $errors->first('password') }}
-                                    </span>
-                                @endif
-                            
-                        </div>
-                            <input type="submit" name="login" class="btn btn-primary btn-xl login loginmodal-submit" value="Login">
-
-                </form>
-                </div>
-              
-             {{--  <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>  --}}
-            </div>
-          </div>
-        </div>
-        {{--  <script type="text/javascript">
-            $(document).ready(function () {
-            $('body').on('click','td.warning input',function () { 
-                        
-                            
-                            function (isConfirm) {
-                                if (isConfirm) {
-                                    swal("Deleted!", "Your imaginary file has been deleted!", "success");
-                                } else {
-                                    swal("Cancelled", "Your imaginary file is safe :)", "error");
-                                }
-                            });
-                        });
-
-            });
-  </script>  --}}
-
-    
+     
 
 
 

@@ -18,6 +18,7 @@
   background-color: #121d33;
   color: #fed136;
   font-family: Roboto;
+  border-radius: 0px !important;
 }
 .card-header h2{
   

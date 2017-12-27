@@ -32,6 +32,9 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/edit/{id}', 'ApiController@edit');
     Route::patch('/edit/{id}', 'ApiController@update');
     Route::get('/usermgmt','UserMgmtController@index')->name('usermgmt');
+    Route::get('/usermgmt/add','UserMgmtController@add')->name('adduser');
+    Route::get('/usermgmt/delete','UserMgmtController@delete')->name('deleteuser');
+     Route::get('/usermgmt/edit','UserMgmtController@edit')->name('adduser');
 });
 
 Route::get('/key', function () {
