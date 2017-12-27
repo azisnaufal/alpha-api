@@ -98,7 +98,10 @@
 						  </div>
 						  <div class="card-block">
 						    <blockquote class="card-blockquote">
-										<pre id="result" style="margin-left: 20px"></pre>
+										<!-- <pre id="result" style="margin-left: 20px"></pre> -->
+										<textarea id="result" class="col-12" style="height:400px; padding: none;">
+											
+										</textarea>
 						     
 						    </blockquote>
 							</div>
