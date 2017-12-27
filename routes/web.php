@@ -22,8 +22,7 @@ Route::get('/awal', function(){
 
 
 Route::group(['middleware'=>'auth'], function(){
-    Route::get('/adduser','HomeController@register');
-    Route::post('/adduser','HomeController@adduser');
+    Route::post('/usermgmt/add','HomeController@adduser');
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/add', 'ApiController@index')->name('add');
     Route::post('/add', 'ApiController@store');
@@ -33,8 +32,10 @@ Route::group(['middleware'=>'auth'], function(){
     Route::patch('/edit/{id}', 'ApiController@update');
     Route::get('/usermgmt','UserMgmtController@index')->name('usermgmt');
     Route::get('/usermgmt/add','UserMgmtController@add')->name('adduser');
-    Route::get('/usermgmt/delete','UserMgmtController@delete')->name('deleteuser');
-    Route::get('/usermgmt/edit','UserMgmtController@edit')->name('adduser');
+    Route::get('/usermgmt/delete/{id}','UserMgmtController@delete')->name('deleteuser');
+    Route::get('/usermgmt/edit/{id}','UserMgmtController@edit')->name('edituser');
+    Route::patch('/usermgmt/edit/{id}', 'UserMgmtController@update');
+    Route::delete('/usermgmt/delete/{id}', 'UserMgmtController@destroy');
 });
 
 Route::get('/key', function () {

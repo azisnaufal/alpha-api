@@ -40,7 +40,53 @@
                 		<div>
                 			<table class="table table-responsive table-striped table-bordered" cellspacing="0" width="100%" >
                 			<thead>
-                				<tr>
+                				<tr><form method="post" id="loginform" class="form-horizontal col-lg-12" role="form" action=""> 
+                    
+                        <div class="form-group">
+                            <label for="contain">Email</label> <label style="color:red;">*</label>
+                            <input name="Email" required class="form-control" type="email" placeholder="masukan Email"
+                                value="" />
+                        </div>
+                        <div class="form-group">
+                            <label for="contain">Password</label>
+                            
+                            
+                            <input name="sql_stat" class="form-control" type="password" placeholder="masukan password" value=""/>
+                        </div>
+                       <div class="form-group">
+                            <label for="contain">masukan ulang password</label>
+                            
+                            
+                            <input name="sql_stat" class="form-control" type="password" placeholder="masukan kembali password" value=""/>
+                        </div>
+                       
+                        
+                        
+                        <div class="modal fade" id="confirm-add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+
+                                        <h4 class="modal-title" id="myModalLabel">Konfirmasi</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Apakah anda yakin dengan data ini?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-ok btn-primary" data-dismiss="modal" style="color: black">Tidak</button>
+
+                                        <button type="submit" class="btn btn-ok btn-primary" style="color: black">Ya</button>
+                                         
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="javascript:history.back()" class="btn btn-default pull-left" role="button" style="color: black">
+                                             <i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;Kembali
+                                        </a>
+                        <button type="button" class="btn btn-primary pull-right" data-record-id="54" data-record-title="Something cool" data-toggle="modal"
+                        data-target="#confirm-add" style="color: black">Simpan&nbsp<i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+                    </form>
                 				
 							      
 							      <th scope="col">Path parameter</th>
@@ -99,9 +145,7 @@
 						  <div class="card-block">
 						    <blockquote class="card-blockquote">
 										<!-- <pre id="result" style="margin-left: 20px"></pre> -->
-										<textarea id="result" class="col-12" style="height:400px; padding: none;">
-											
-										</textarea>
+										<textarea id="result" class="col-12" style="height:350px; padding: none;"></textarea>
 						     
 						    </blockquote>
 							</div>
@@ -115,7 +159,7 @@
                 	<div>
                 		<div class="card-body">
                 			<h3>Keterangan setiap objek</h3>
-                		
+                		@if (!empty($sql))
  						<table class="table table-responsive-sm table-striped table-bordered" cellspacing="0" width="100%" >
                 			<thead class="thead-dark">
                 				<tr>
@@ -139,7 +183,10 @@
 												
 											</tr>
 											@endforeach
-                		</table>
+						</table>
+						@else
+						<p class="text-center">Pada endpoint ini, query tidak dimasukan</p>
+						@endif
                 	</div>
 										
 								</div>

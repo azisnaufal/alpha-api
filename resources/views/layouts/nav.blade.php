@@ -108,7 +108,48 @@
   </section>
 
 
+<!-- Modal -->
+<div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="loginmodal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content loginmodal-container">
+        <div class="modal-header">
+          <h1 class="modal-title " id="loginmodal">Login</h1>
+          
+        </div>
+        <div class="modal-body">
+           <form method="POST" action="{{ route('login') }}">
+            {{ csrf_field() }}
+            <div class="{{ $errors->has('username') ? ' has-error' : '' }}">
+              
+                      <input type="text" placeholder="Username" name="username" value="{{ old('username') }}" required autofocus>
 
+                          @if ($errors->has('username'))
+                              <span class="help-block">
+                                  {{ $errors->first('username') }}
+                              </span>
+                          @endif
+                      
+                  </div>
+                  <div class="{{ $errors->has('password') ? ' has-error' : '' }}">
+                    
+                      <input type="password" required name="password" name="password" placeholder="Password">
+
+                          @if ($errors->has('password'))
+                              <span class="help-block">
+                                  {{ $errors->first('password') }}
+                              </span>
+                          @endif
+                      
+                  </div>
+                      <input type="submit" name="login" class="btn btn-primary btn-xl login loginmodal-submit" value="Login">
+
+          </form>
+          </div>
+        
+       
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>
@@ -135,8 +176,8 @@
 
   <!-- Bootstrap core JavaScript -->
   <script src="{{ asset('js/jquery.min.js') }}"></script>
-  <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
+  <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script> 
+  
   <!-- Plugin JavaScript -->
   <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
   <script src="{{ asset('vendor/datatables/jquery.dataTables.js') }}"></script>

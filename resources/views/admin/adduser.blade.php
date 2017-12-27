@@ -18,34 +18,43 @@
     float: right;
     }
 </style>
+@include('templates/feedback')
 <div class="container">
     <div class="row">
         <div class="col-lg-12 col-lg-offset-2">
             <div class="card card-default">
                 <div class="card-header">
+                    @if (!empty($result)) 
+                    <h2>Ubah User</h2>
+                    @else
                     <h2>Tambah User</h2>
+                    @endif
                 </div>
 
                 <div class="card-body">
 
-                    <form method="post" id="loginform" class="form-horizontal col-lg-12" role="form" action=""> 
-                    
+                    <form method="post" id="loginform" class="form-horizontal col-lg-12" role="form" action="{{ empty($result) ? url('usermgmt/add') : url("usermgmt/edit/$result->id")}}"> 
+                        {{ csrf_field() }}
+                        @if (!empty($result)) 
+                                {{ method_field('patch') }} 
+                        @endif
                         <div class="form-group">
-                            <label for="contain">Email</label> <label style="color:red;">*</label>
-                            <input name="Email" required class="form-control" type="email" placeholder="masukan Email"
-                                value="" />
+                            <label for="contain">Username</label> <label style="color:red;">*</label>
+                            <input id="username" name="username" required class="form-control" type="text" placeholder="Masukan username anda"
+                                value="{{$result->username}}" />
                         </div>
                         <div class="form-group">
-                            <label for="contain">Password</label>
-                            
-                            
-                            <input name="sql_stat" class="form-control" type="password" placeholder="masukan password" value=""/>
+                            <label for="contain">Password</label> <label style="color:red;">*</label>
+                            <input name="password" id="password" class="form-control" type="password" placeholder="Masukan password anda" value=""/>
+                            @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>Password harus lebih dari 6 karakter dan persis dengan konfirmasi password anda</strong>
+                                    </span>
+                                @endif
                         </div>
                        <div class="form-group">
-                            <label for="contain">masukan ulang password</label>
-                            
-                            
-                            <input name="sql_stat" class="form-control" type="password" placeholder="masukan kembali password" value=""/>
+                            <label for="contain">Konfirmasi password</label><label style="color:red;">*</label>
+                            <input name="password_confirmation" id="password-confirm" class="form-control" type="password" placeholder="Konfirmasi password anda" value=""/>
                         </div>
                        
                         
@@ -54,7 +63,7 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-
+        
                                         <h4 class="modal-title" id="myModalLabel">Konfirmasi</h4>
                                     </div>
                                     <div class="modal-body">
@@ -62,7 +71,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-ok btn-primary" data-dismiss="modal" style="color: black">Tidak</button>
-
+        
                                         <button type="submit" class="btn btn-ok btn-primary" style="color: black">Ya</button>
                                          
                                     </div>

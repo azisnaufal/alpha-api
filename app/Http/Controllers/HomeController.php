@@ -51,18 +51,19 @@ class HomeController extends Controller
     }
     public function adduser(Request $request){
         $rules = [
-            'email' => 'required|string|email|max:255|unique:tbl_users',
+            'username' => 'required|string|max:255|unique:tbl_users',
             'password' => 'required|string|min:6|confirmed',
         ];
         $this->validate($request, $rules);
   
         $input = $request->all();
         $status = \App\User::create([
-            'email' => $input['email'],
+            'username' => $input['username'],
             'password' => bcrypt($input['password']),
+            'level' => 2,
         ]);
   
-        if ($status) return redirect('/home')->with('success', 'User berhasil ditambahkan');
-        else return redirect('/home')->with('error', 'User gagal ditambahkan');
+        if ($status) return redirect('/usermgmt')->with('success', 'User berhasil ditambahkan');
+        else return redirect('/usermgmt')->with('error', 'User gagal ditambahkan');
       }
 }

@@ -124,13 +124,13 @@
               <div class="modal-body">
                  <form method="POST" action="{{ route('login') }}">
                   {{ csrf_field() }}
-                  <div class="{{ $errors->has('email') ? ' has-error' : '' }}">
+                  <div class="{{ $errors->has('username') ? ' has-error' : '' }}">
                     
-                            <input type="text" placeholder="Email" name="email" value="{{ old('email') }}" required autofocus>
+                            <input type="text" placeholder="Username" name="username" value="{{ old('username') }}" required autofocus>
 
-                                @if ($errors->has('email'))
+                                @if ($errors->has('username'))
                                     <span class="help-block">
-                                        {{ $errors->first('email') }}
+                                        {{ $errors->first('username') }}
                                     </span>
                                 @endif
                             
