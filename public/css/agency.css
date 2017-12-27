@@ -199,3 +199,6 @@ footer {
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
 
+button{
+  border-radius: 0px !important;
+}

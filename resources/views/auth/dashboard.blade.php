@@ -17,8 +17,13 @@
                     @endif
                 <h3 style="color:#fed136;">Daftar User
                     @auth
-                    <a href="{{url('/usermgmt/add')}}">
-                        <img class="float-right" title="Tambah" src="{{ asset('img/glyphicons-433-plus.png')}}">
+                     <a href="{{url('add')}}">
+                        <button class="btn btn-secondary btn-xs float-right" style="color: white; margin-right: 20px; background-color: #121d33 !important;">
+                            Tambah
+                             <i class="fa fa-plus" title="tambah" aria-hidden="true" style="color: white;"></i>
+                        </button>
+
+                        <!-- <img class="float-right" title="Tambah" src="{{ asset('img/glyphicons-433-plus.png')}}"> -->
                     </a>
                     @endauth
                 </h3>

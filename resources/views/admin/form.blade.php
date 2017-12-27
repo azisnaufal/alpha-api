@@ -84,10 +84,12 @@
                             </div>
                         </div>
                         <a href="javascript:history.back()" class="btn btn-default pull-left" role="button">
-                                            <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Kembali
-                                        </a>
+                                            <i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;Kembali
+                        </a>
                         <button type="button"class="btn btn-primary pull-right" data-record-id="54" data-record-title="Something cool" data-toggle="modal"
-                        data-target="#confirm-delete">Simpan</button>
+                        data-target="#confirm-delete" style="color: black;">Simpan&nbsp<i class="fa fa-floppy-o" aria-hidden="true"></i>
+                        </button>
+
                     </form>
                     
                 </div>
