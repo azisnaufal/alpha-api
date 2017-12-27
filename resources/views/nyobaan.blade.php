@@ -93,16 +93,16 @@
                                         <img title="Hapus" src="{{ asset('img/glyphicons-208-remove.png')}}">
                                     </a> --}} -->
                                         <span class="btn-group pull-right" style="margin-top: 5px">
+                                            <a href="{{ url("edit/$row->id") }}">
                                                 <button class="btn btn-warning btn-xs" title="ubah">
-                                                    <a href="{{ url("edit/$row->id") }}">
                                                     <i class="fa fa-pencil-square-o fa-lg" style="text-decoration: none; color: black;"></i>
-                                                    </a>
                                                 </button>
+                                            </a>
+                                            <a href="{{ url("delete/confirm/$row->id") }}">
                                                 <button class="btn btn-danger btn-xs">
-                                                    <a href="{{ url("delete/confirm/$row->id") }}">
                                                     <i class="fa fa-trash-o fa-lg" style="color: black;" ></i>
-                                                    </a>
                                                 </button>
+                                            </a>
                                         </span>
                                 </td>
                                 @endauth
@@ -160,7 +160,7 @@
             </div>
           </div>
         </div>
-        <script type="text/javascript">
+        {{--  <script type="text/javascript">
             $(document).ready(function () {
             $('body').on('click','td.warning input',function () { 
                         
@@ -175,7 +175,7 @@
                         });
 
             });
-  </script>
+  </script>  --}}
 
     
 

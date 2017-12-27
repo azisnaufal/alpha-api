@@ -61,6 +61,9 @@
           @endguest
           @auth
           <li class="nav-item">
+              <a class="nav-link" href="{{ route('usermgmt') }}">Manage User</a>
+            </li>
+          <li class="nav-item">
             <a href="{{ route('logout') }}" class="nav-link"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

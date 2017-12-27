@@ -30,7 +30,8 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/delete/confirm/{id}', 'HomeController@deleteConfirm');
     Route::delete('/delete/{id}', 'ApiController@destroy');
     Route::get('/edit/{id}', 'ApiController@edit');
-	Route::patch('/edit/{id}', 'ApiController@update');
+    Route::patch('/edit/{id}', 'ApiController@update');
+    Route::get('/usermgmt','UserMgmtController@index')->name('usermgmt');
 });
 
 Route::get('/key', function () {
