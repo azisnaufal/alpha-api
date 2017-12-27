@@ -23,7 +23,11 @@
         <div class="col-lg-12 col-lg-offset-2">
             <div class="card card-default">
                 <div class="card-header">
-                    <h2>Tambah endpoint</h2>
+                    @if (!empty($result)) 
+                        <h2>Edit endpoint</h2>
+                    @else
+                        <h2>Tambah endpoint</h2>
+                    @endif
                 </div>
 
                 <div class="card-body">
