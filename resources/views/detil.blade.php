@@ -140,12 +140,12 @@
                 	<div>  --}}
 						<div class="card">
 						  <div class="card-header">
-						    <pre style="color:#fec503;">$ curl -X "{{url("api/$result->url")}}"</pre>
+						    <pre style="color:#fec503;">$ curl -X GET "{{url("api/$result->url")}}"</pre>
 						  </div>
 						  <div class="card-block">
 						    <blockquote class="card-blockquote">
 										<!-- <pre id="result" style="margin-left: 20px"></pre> -->
-										<textarea id="result" class="col-12" style="height:350px; padding: none;"></textarea>
+										<textarea readonly id="result" class="col-12" style="height:350px; padding: none;"></textarea>
 						     
 						    </blockquote>
 							</div>
