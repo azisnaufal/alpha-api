@@ -130,7 +130,7 @@
 
                                 @if ($errors->has('username'))
                                     <span class="help-block">
-                                        {{ $errors->first('username') }}
+                                        Username tidak terdaftar
                                     </span>
                                 @endif
                             
@@ -141,7 +141,7 @@
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
-                                        {{ $errors->first('password') }}
+                                        Password anda salah.
                                     </span>
                                 @endif
                             

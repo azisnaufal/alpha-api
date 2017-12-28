@@ -57,19 +57,6 @@
                                                     <i class="fa fa-trash-o fa-lg" style="color: black;" ></i>
                                                 </button>
                                             </a>
-                                            @if($data->level==2)
-                                            <a href="{{url("/usermgmt/naiklevel/$data->id")}}">
-                                                <button class="btn btn-warning btn-xs">
-                                                    <i class="fa fa-upload fa-lg" style="color: black;" ></i>
-                                                </button>
-                                            </a>
-                                            @else
-                                            <a href="{{url("/usermgmt/turunlevel/$data->id")}}">
-                                                <button class="btn btn-warning btn-xs">
-                                                    <i class="fa fa-download fa-lg" style="color: black;" ></i>
-                                                </button>
-                                            </a>
-                                            @endif
                                         </span>
                                 </td>
                                 

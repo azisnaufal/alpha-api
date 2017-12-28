@@ -41,7 +41,7 @@
                         <div class="form-group">
                             <label for="contain">Username</label> <label style="color:red;">*</label>
                             <input id="username" name="username" required class="form-control" type="text" placeholder="Masukan username anda"
-                                value="{{$result->username}}" />
+                                value="{{@$result->username}}" />
                         </div>
                         <div class="form-group">
                             <label for="contain">Password</label> <label style="color:red;">*</label>
